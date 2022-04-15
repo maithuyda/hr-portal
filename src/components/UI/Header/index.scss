@@ -1,0 +1,36 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(3, 37, 65, 1);
+  height: 50px;
+  width: 100%;
+  z-index: 10;
+  transition: top 0.2s linear;
+
+  .content {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .sub_media {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: 0;
+    left: 0;
+    max-width: var(--maxPrimaryPageWidth);
+    width: 65%;
+    padding: 0 40px;
+  }
+
+  ul {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+  }
+}
