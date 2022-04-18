@@ -1,0 +1,40 @@
+.join-today_title {
+  padding: 0 0 0 10px;
+  h2 {
+    margin-top: 0px;
+    font-weight: 700;
+    font-size: 2em;
+    color: #fff;
+  }
+}
+
+.join-today-content_wrapper {
+  padding: 10px 10px 0 10px;
+  display: flex;
+  justify-content: space-between;
+  p {
+    margin: 0;
+    color: #fff;
+    em {
+      opacity: 0.7;
+    }
+  }
+}
+
+.join-today_content {
+  p {
+    margin-bottom: 30px;
+  }
+}
+
+.join-today_list {
+  width: 100%;
+  ul {
+    margin: 0 0 14px 0;
+  }
+  color: #fff;
+  li {
+    opacity: 0.8;
+    margin: 0;
+  }
+}

@@ -1,0 +1,54 @@
+.search {
+  width: 100%;
+}
+
+.search-container {
+  background-color: #fff;
+  position: relative;
+  border-radius: 30px;
+  padding: 3px 50px 3px 10px;
+}
+
+form {
+  input[type="text"] {
+    color: rgba(0, 0, 0, 0.5);
+    border-radius: 30px;
+    padding: 10px 10px;
+    margin: 0 auto;
+    background-color: transparent;
+    outline: none;
+    height: 10px;
+    font-size: 1.1em;
+    border: 0;
+    width: 100%;
+    font-weight: 100;
+  }
+
+  button {
+    border: none;
+    background: linear-gradient(
+      to right,
+      rgba(30, 213, 169, 1) 0%,
+      rgba(1, 180, 228, 1) 100%
+    );
+    font-size: 0.9em;
+    border-radius: 30px;
+    color: #fff;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    border: 0;
+    height: 36px;
+    outline: 0;
+    padding: 0 20px;
+    font-weight: bold;
+  }
+}
+
+.input-group {
+  background-color: #fff;
+  position: relative;
+  border-radius: 30px;
+  margin: 20px 0;
+  padding: 3px 50px 3px 10px;
+}
