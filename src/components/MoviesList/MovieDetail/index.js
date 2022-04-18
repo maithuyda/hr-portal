@@ -8,7 +8,7 @@ const MovieDetail = (props) => {
   return (
     <Card>
       <div className="movie-detail">
-        <Image />
+        <Image src={props.image} id={props.id} title={props.title} />
         <Content title={props.title} releaseDate={props.releaseDate} />
       </div>
     </Card>

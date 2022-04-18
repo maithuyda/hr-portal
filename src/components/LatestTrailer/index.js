@@ -7,8 +7,8 @@ import "./index.scss";
 const LatestTrailer = (props) => {
   return (
     <ContentWrapper>
-      <SectionHeader title="Latest Trailer" />
-      <MoviesList />
+      <SectionHeader title="Latest Trailer" hasSwitchButton={true} />
+      {/* <MoviesList /> */}
     </ContentWrapper>
   );
 };

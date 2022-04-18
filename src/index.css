@@ -25,3 +25,23 @@ main {
   background-color: #fff;
   margin-top: 50px;
 }
+
+footer {
+  max-width: 100%;
+  width: 100vw;
+  box-sizing: border-box;
+  padding: 0;
+  background-image: radial-gradient(
+    at 30% top,
+    #031d33 0%,
+    rgba(3, 37, 65, 1) 70%
+  );
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-between;
+  justify-content: center;
+}

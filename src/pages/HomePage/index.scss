@@ -57,7 +57,7 @@ section.latest-trailers {
 }
 
 .section-wrap {
-  padding: 0 0 30px 0;
+  padding: 0 0 20px 0;
   width: 100%;
   display: flex;
   justify-content: center;
@@ -68,4 +68,9 @@ section.join-today {
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
 }
