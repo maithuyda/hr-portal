@@ -1,5 +1,7 @@
-import "./index.scss";
 import ContentWrapper from "../UI/ContentWrapper";
+import Button from "../UI/Button";
+
+import "./index.scss";
 
 const JoinToday = (props) => {
   return (
@@ -15,7 +17,7 @@ const JoinToday = (props) => {
             <em>what to watch next</em>—regardless if it's in theatres, on TV or
             available on popular streaming services like .
           </p>
-          <button>Sign Up</button>
+          <Button title="Sign Up" />
         </div>
         <div className="join-today_list">
           <ul>
