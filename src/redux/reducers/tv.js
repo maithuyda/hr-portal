@@ -7,11 +7,11 @@ const tvSlice = createSlice({
         trendingTv: [],
     },
     reducers: {
-        setPopularTv(state, movies) {
-            state.popularMovies = movies;
+        setPopularTv(state, tvs) {
+            state.popularMovies = tvs;
         },
-        setTrendingTv(state, movies) {
-            state.trendingMovies = movies;
+        setTrendingTv(state, tvs) {
+            state.trendingMovies = tvs;
         },
     },
 });

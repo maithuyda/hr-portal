@@ -4,51 +4,17 @@ import { useMemo } from 'react';
 
 import './index.scss';
 
-const DUMMY_MOVIES = [
-    {
-        id: 'movie1',
-        original_title: 'Moon Knight',
-        release_date: 'Mar 30, 2022',
-    },
-    {
-        id: 'movie2',
-        original_title: 'Halo',
-        release_date: 'Mar 24, 2022',
-    },
-    {
-        id: 'movie3',
-        original_title: 'Moon Knight',
-        release_date: 'Mar 30, 2022',
-    },
-    {
-        id: 'movie4',
-        original_title: 'Moon Knight',
-        release_date: 'Mar 30, 2022',
-    },
-    {
-        id: 'movie5',
-        original_title: 'Moon Knight',
-        release_date: 'Mar 30, 2022',
-    },
-    {
-        id: 'movie6',
-        original_title: 'Moon Knight',
-        release_date: 'Mar 30, 2022',
-    },
-];
-
 const MoviesList = (props) => {
     const movie = useSelector((state) => state.movie);
     const type = props.type;
     let movieData = movie[type].payload;
-    console.log(movieData);
     if (!movieData) {
         movieData = [];
     }
     const movieList = useMemo(() => {
         return movieData.map((movie) => {
-            const title = movie.media_type === 'tv' ? movie.original_name : movie.original_title;
-            const releaseDate = movie.media_type === 'tv' ? movie.first_air_date : movie.release_date;
+            const title = movie.original_title ? movie.original_title : movie.original_name;
+            const releaseDate = movie.release_date ? movie.release_date : movie.first_air_date;
 
             return (
                 <MovieDetail

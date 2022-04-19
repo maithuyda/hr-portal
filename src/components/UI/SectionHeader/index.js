@@ -10,7 +10,7 @@ const SectionHeader = (props) => {
                 <div className="section-header">
                     <h2>{props.title}</h2>
                 </div>
-                {props.hasSwitchButton && <SwitchButton />}
+                {props.hasSwitchButton && <SwitchButton section={props.section} />}
             </div>
         </Fragment>
     );

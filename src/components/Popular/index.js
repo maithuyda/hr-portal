@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import SectionHeader from '../UI/SectionHeader';
 import MoviesList from '../MoviesList';
@@ -8,18 +8,16 @@ import { fetchPopularMovies } from '../../redux/actions/movie';
 
 const Popular = (props) => {
     const dispatch = useDispatch();
+    const popularMediaType = useSelector((state) => state.movie.popularMediaType.payload);
 
     useEffect(() => {
-        const params = {
-            language: 'en-US',
-            page: 1,
-        };
-        dispatch(fetchPopularMovies(params));
-    }, [dispatch]);
+        const params = {};
+        dispatch(fetchPopularMovies(params, popularMediaType));
+    }, [dispatch, popularMediaType]);
 
     return (
         <ContentWrapper>
-            <SectionHeader title="What's Popular" hasSwitchButton={true} />
+            <SectionHeader title="What's Popular" section="popular" hasSwitchButton={true} />
             <MoviesList type="popularMovies" />
         </ContentWrapper>
     );
