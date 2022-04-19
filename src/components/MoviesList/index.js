@@ -1,5 +1,6 @@
 import MovieDetail from "./MovieDetail";
 import { useSelector } from "react-redux";
+import { useMemo } from "react";
 
 import "./index.scss";
 
@@ -40,28 +41,30 @@ const MoviesList = (props) => {
   const movie = useSelector((state) => state.movie);
   const type = props.type;
   let movieData = movie[type].payload;
-  // console.log(movie);
+  console.log(movieData);
   if (!movieData) {
     movieData = [];
   }
-  console.log(movieData);
-  const moviesList = movieData.map((movie) => {
-    const title =
-      movie.media_type === "tv" ? movie.original_name : movie.original_title;
-    const releaseDate =
-      movie.media_type === "tv" ? movie.first_air_date : movie.release_date;
+  const movieList = useMemo(() => {
+    return movieData.map((movie) => {
+      const title =
+        movie.media_type === "tv" ? movie.original_name : movie.original_title;
+      const releaseDate =
+        movie.media_type === "tv" ? movie.first_air_date : movie.release_date;
 
-    return (
-      <MovieDetail
-        key={movie.id}
-        id={movie.id}
-        title={title}
-        releaseDate={releaseDate}
-        image={movie.poster_path}
-      />
-    );
-  });
-  return <div className="movie-list_wrapper">{moviesList}</div>;
+      return (
+        <MovieDetail
+          key={movie.id}
+          id={movie.id}
+          title={title}
+          releaseDate={releaseDate}
+          image={movie.poster_path}
+        />
+      );
+    });
+  }, [movieData]);
+
+  return <div className="movie-list_wrapper">{movieList}</div>;
 };
 
 export default MoviesList;

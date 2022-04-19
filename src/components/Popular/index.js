@@ -1,31 +1,20 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { movieActions } from "../../redux/reducers/movie";
 
 import SectionHeader from "../UI/SectionHeader";
 import MoviesList from "../MoviesList";
 import ContentWrapper from "../UI/ContentWrapper";
-import movieApi from "../../apis/movieApi";
+import { fetchPopularMovies } from "../../redux/actions/movie";
 
 const Popular = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    const fetchPopularMovies = async () => {
-      const params = {
-        api_key: "64e9c0b550ae1b08c54bf65bb08aba0b",
-        language: "en-US",
-        page: 1,
-      };
-
-      try {
-        const response = await movieApi.getPopular(params);
-        dispatch(movieActions.setPopularMovies(response.data.results));
-      } catch (error) {
-        console.log("Failed to fetch movie list: ", error);
-      }
+    const params = {
+      language: "en-US",
+      page: 1,
     };
-    fetchPopularMovies();
+    dispatch(fetchPopularMovies(params));
   }, [dispatch]);
 
   return (
