@@ -6,9 +6,11 @@ import MoviesList from '../MoviesList';
 import ContentWrapper from '../UI/ContentWrapper';
 import { fetchPopularMovies } from '../../redux/actions/movie';
 
+import './index.scss';
+
 const Popular = (props) => {
     const dispatch = useDispatch();
-    const popularMediaType = useSelector((state) => state.movie.popularMediaType.payload);
+    const popularMediaType = useSelector((state) => state.movie.popularMediaType);
 
     useEffect(() => {
         const params = {};
@@ -18,7 +20,7 @@ const Popular = (props) => {
     return (
         <ContentWrapper>
             <SectionHeader title="What's Popular" section="popular" hasSwitchButton={true} />
-            <MoviesList type="popularMovies" />
+            <MoviesList type="popular" media={popularMediaType} />
         </ContentWrapper>
     );
 };

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import SectionHeader from '../UI/SectionHeader';
 import MoviesList from '../MoviesList';
 import ContentWrapper from '../UI/ContentWrapper';
-import { useDispatch, useSelector } from 'react-redux';
 import { fetchTrendingMovies } from '../../redux/actions/movie';
 
 import './index.scss';
@@ -14,13 +14,13 @@ const Trending = (props) => {
 
     useEffect(() => {
         const params = {};
-        dispatch(fetchTrendingMovies(params, trendingMediaType.payload));
+        dispatch(fetchTrendingMovies(params, trendingMediaType));
     }, [dispatch, trendingMediaType]);
 
     return (
         <ContentWrapper>
             <SectionHeader title="Trending" section="trending" hasSwitchButton={true} />
-            <MoviesList type="trendingMovies" />
+            <MoviesList type="trending" media={trendingMediaType} />
         </ContentWrapper>
     );
 };

@@ -6,8 +6,9 @@ import LatestTrailer from '../../components/LatestTrailer';
 import Trending from '../../components/Trending';
 import JoinToday from '../../components/JoinToday';
 import Leaderboard from '../../components/Leaderboard';
-import './index.scss';
 import Footer from '../../components/UI/Footer';
+
+import './index.scss';
 
 const HomePage = () => {
     return (

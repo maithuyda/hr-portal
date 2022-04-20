@@ -1,13 +1,15 @@
+import { Link } from 'react-router-dom';
+
 import './index.scss';
 
 const Content = (props) => {
     return (
         <div className="movie-content">
-            <h2>
-                <a href="/tv/92749" title={props.title}>
+            <div className="movie-title">
+                <Link to={`/${props.media}/${props.id}`} title={props.title}>
                     {props.title}
-                </a>
-            </h2>
+                </Link>
+            </div>
             <p>{props.releaseDate}</p>
         </div>
     );

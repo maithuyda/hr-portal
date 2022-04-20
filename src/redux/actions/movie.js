@@ -1,6 +1,24 @@
 import movieApi from '../../apis/movieApi';
 import { movieActions } from '../reducers/movie';
 
+export const fetchById = (params, mediaType, id) => {
+    return async (dispatch) => {
+        const fetchById = async (params) => {
+            const response = await movieApi.getById(params, mediaType, id);
+            const data = await response.data.results;
+            return data;
+        };
+
+        try {
+            const moviePromise = await fetchById(params);
+
+            return moviePromise;
+        } catch (error) {
+            console.log(`Failed to fetch movie by ID ${id}`, error);
+        }
+    };
+};
+
 export const fetchLatestVideos = (params, mediaType) => {
     return async (dispatch) => {
         const fetchTrendingMovies = async (params) => {

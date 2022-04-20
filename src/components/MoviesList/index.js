@@ -6,14 +6,15 @@ import './index.scss';
 
 const MoviesList = (props) => {
     const movie = useSelector((state) => state.movie);
-    const type = props.type;
-    let movieData = movie[type].payload;
+    const { type, media } = props;
+
+    let movieData = movie[type];
     if (!movieData) {
         movieData = [];
     }
     const movieList = useMemo(() => {
         return movieData.map((movie) => {
-            const title = movie.original_title ? movie.original_title : movie.original_name;
+            const title = movie.original_title ? movie.title : movie.name;
             const releaseDate = movie.release_date ? movie.release_date : movie.first_air_date;
 
             return (
@@ -23,10 +24,11 @@ const MoviesList = (props) => {
                     title={title}
                     releaseDate={releaseDate}
                     image={movie.poster_path}
+                    media={media}
                 />
             );
         });
-    }, [movieData]);
+    }, [movieData, media]);
 
     return <div className="movie-list_wrapper">{movieList}</div>;
 };

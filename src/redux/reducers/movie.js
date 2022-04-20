@@ -6,28 +6,28 @@ const movieSlice = createSlice({
         trailerMediaType: 'tv',
         popularMediaType: 'tv',
         trendingMediaType: 'tv',
-        latestTrailers: [],
-        popularMovies: [],
-        trendingMovies: [],
+        trailers: [],
+        popular: [],
+        trending: [],
     },
     reducers: {
         setPopularMedia(state, media_type) {
-            state.popularMediaType = media_type;
+            state.popularMediaType = media_type.payload;
         },
         setTrendingMedia(state, media_type) {
-            state.trendingMediaType = media_type;
+            state.trendingMediaType = media_type.payload;
         },
         setTrailerMediaType(state, media_type) {
-            state.trailerMediaType = media_type;
+            state.trailerMediaType = media_type.payload;
         },
         setPopularMovies(state, movies) {
-            state.popularMovies = movies;
+            state.popular = movies.payload;
         },
         setTrendingMovies(state, movies) {
-            state.trendingMovies = movies;
+            state.trending = movies.payload;
         },
         setLatestVideos(state, videos) {
-            state.latestTrailers = videos;
+            state.trailers = videos.payload;
         },
     },
 });

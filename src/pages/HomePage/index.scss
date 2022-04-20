@@ -1,76 +1,71 @@
 .container {
-  background-color: antiquewhite;
+    background-color: antiquewhite;
 
-  p {
-    color: red;
-    font-size: 1rem;
-  }
+    p {
+        color: red;
+        font-size: 1rem;
+    }
 }
 
 .page-wrap {
-  display: flex;
-  flex: 1 1 auto;
-  min-height: 100%;
-  height: auto;
-  position: relative;
-  top: 0;
-  left: 0;
+    display: flex;
+    flex: 1 1 auto;
+    min-height: 100%;
+    height: auto;
+    position: relative;
+    top: 0;
+    left: 0;
 }
 
 section {
-  width: 70%;
+    width: 70%;
 }
 
 section.discover {
-  background-size: cover;
-  background-position: center;
-  background-image: linear-gradient(
-      to right,
-      rgba(3, 37, 65, 0.8) 0%,
-      rgba(3, 37, 65, 0) 100%
-    ),
-    url(../../assets/images/discover.jpg);
+    background-size: cover;
+    background-position: center;
+    background-image: linear-gradient(to right, rgba(3, 37, 65, 0.8) 0%, rgba(3, 37, 65, 0) 100%),
+        url(../../assets/images/discover.jpg);
 
-  color: #fff;
+    color: #fff;
 }
 
 section.latest-trailers {
-  background-image: url(https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/1uegR4uAxRxiMyX4nQnpzbXhrTw.jpg);
-  background-size: cover;
-  background-position: center;
-  .content_wrapper {
-    background: linear-gradient(
-      to right,
-      rgba(3, 37, 65, 0.75) 0%,
-      rgba(3, 37, 65, 0.75) 100%
-    );
-  }
-  color: #fff;
-  a {
+    border-radius: 5px;
+    background-image: url(https://www.themoviedb.org/t/p/w1920_and_h427_multi_faces/1uegR4uAxRxiMyX4nQnpzbXhrTw.jpg);
+    background-size: cover;
+    background-position: center;
+    .content_wrapper {
+        background: linear-gradient(to right, rgba(3, 37, 65, 0.75) 0%, rgba(3, 37, 65, 0.75) 100%);
+        padding-bottom: 0;
+        border-radius: 5px;
+    }
     color: #fff;
-  }
-  p {
-    font-size: 1em;
-    padding: 0;
-    color: #fff;
-  }
+    a {
+        color: #fff;
+    }
+    p {
+        font-size: 1em;
+        padding: 0;
+        color: #fff;
+    }
 }
 
 .section-wrap {
-  padding: 0 0 20px 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
+    padding: 0 0 10px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 section.join-today {
-  background-image: url("https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces_filter(duotone,190235,ad47dd)/lMnoYqPIAVL0YaLP5YjRy7iwaYv.jpg");
-  background-position: center center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-image: url('https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces_filter(duotone,190235,ad47dd)/lMnoYqPIAVL0YaLP5YjRy7iwaYv.jpg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 a {
-  color: #fff;
-  text-decoration: none;
+    color: #fff;
+    text-decoration: none;
 }

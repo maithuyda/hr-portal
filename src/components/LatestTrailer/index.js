@@ -9,7 +9,7 @@ import TrailersList from '../TrailersList';
 
 const LatestTrailer = (props) => {
     const dispatch = useDispatch();
-    const trailerMediaType = useSelector((state) => state.movie.trailerMediaType.payload);
+    const trailerMediaType = useSelector((state) => state.movie.trailerMediaType);
     useEffect(() => {
         const params = {};
         dispatch(fetchLatestVideos(params, trailerMediaType));
