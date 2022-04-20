@@ -5,8 +5,9 @@ import Popular from '../../components/Popular';
 import LatestTrailer from '../../components/LatestTrailer';
 import Trending from '../../components/Trending';
 import JoinToday from '../../components/JoinToday';
-
+import Leaderboard from '../../components/Leaderboard';
 import './index.scss';
+import Footer from '../../components/UI/Footer';
 
 const HomePage = () => {
     return (
@@ -39,10 +40,14 @@ const HomePage = () => {
                             <JoinToday title="Join Today" />
                         </section>
                     </div>
-
-                    <section>Leaderboard</section>
+                    <div className="section-wrap">
+                        <section className="leaderboard">
+                            <Leaderboard />
+                        </section>
+                    </div>
                 </main>
             </div>
+            <Footer />
         </Fragment>
     );
 };

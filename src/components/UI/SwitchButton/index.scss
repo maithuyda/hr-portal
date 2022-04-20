@@ -1,3 +1,30 @@
 .switch-button {
-  padding: 10px 40px;
+    padding: 10px;
+    display: flex;
+    height: 40px;
+    margin-left: 10px;
+    .filter {
+        font-size: 0.8em;
+        font-weight: bold;
+        width: 50%;
+        min-width: 80px;
+        height: 40px;
+        border: none;
+        color: #000;
+        cursor: pointer;
+        &.left {
+            background: rgb(195, 233, 243);
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+        }
+        &.right {
+            background: rgb(195, 233, 243);
+            border-top-right-radius: 20px;
+            border-bottom-right-radius: 20px;
+        }
+        &.selected {
+            color: #fff;
+            background: linear-gradient(to left, rgb(30, 213, 169) 0%, rgb(1, 180, 228) 100%);
+        }
+    }
 }
