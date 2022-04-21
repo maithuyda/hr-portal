@@ -1,4 +1,4 @@
-import React, { useEffect, useState, Fragment } from 'react';
+import React, { useEffect, useState, Fragment, useCallback, useMemo } from 'react';
 import { useParams } from 'react-router-dom';
 
 import Header from '../../components/UI/Header';
@@ -8,6 +8,7 @@ import MovieHeader from '../../components/MovieHeader';
 import movieApi from '../../apis/movieApi';
 
 import './index.scss';
+import MovieContent from '../../components/MovieContent';
 
 const shortCutBarData = [
     {
@@ -116,21 +117,35 @@ const shortCutBarData = [
 ];
 
 const Movie = (props) => {
-    const [detailData, setDetailData] = useState({});
+    const [detailData, setDetailData] = useState();
     const { media } = props;
     const movieId = useParams().movieId;
 
-    useEffect(() => {
-        const fetchById = async () => {
-            const params = {};
-            const movie = await movieApi.getById(params, media, movieId);
-            const movieData = await movie.data;
-            return movieData;
-        };
-        fetchById().then((data) => {
-            setDetailData(data);
-        });
+    const fetchById = useCallback(async () => {
+        const params = {};
+        const movie = await movieApi.getById(params, media, movieId);
+        return movie;
     }, [movieId, media]);
+
+    const fetchCredits = useCallback(async () => {
+        const params = {};
+        const credits = await movieApi.getCredits(params, media, movieId);
+        return credits;
+    }, [movieId, media]);
+
+    const dataPromise = useMemo(() => {
+        return [fetchById(), fetchCredits()];
+    }, [fetchById, fetchCredits]);
+
+    useEffect(() => {
+        Promise.all(dataPromise).then((data) => {
+            const detailData = data.map((response) => {
+                return response.data;
+            });
+            setDetailData({ movieData: detailData[0], credits: detailData[1] });
+        });
+    }, [dataPromise]);
+
     return (
         <Fragment>
             <div className="page-wrap">
@@ -141,10 +156,15 @@ const Movie = (props) => {
                             <NavItemsList data={shortCutBarData} />
                         </div>
                     </section>
-                    <section className="detail-header">{/* <MovieHeader data={detailData} /> */}</section>
-                    <section className="detail-content">
-                        <p>Movie Content</p>
+
+                    <section className="detail-header">
+                        <MovieHeader data={detailData} />
                     </section>
+                    <div className="section-wrap">
+                        <section className="detail-content content">
+                            <MovieContent data={detailData} media={media} />
+                        </section>
+                    </div>
                 </main>
             </div>
             <Footer />

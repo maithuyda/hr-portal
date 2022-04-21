@@ -2,11 +2,12 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    background-image: url('https://www.themoviedb.org/t/p/w1920_and_h800_multi_faces/85xYejKh6JPTEUGrn2SIPCxxiQO.jpg');
+
     background-size: cover;
     background-repeat: no-repeat;
     background-position: right -200px top;
     .background-overlay {
+        background-image: linear-gradient(to right, rgba(10.5, 31.5, 10.5, 1) 150px, rgba(10.5, 31.5, 10.5, 0.84) 100%);
         display: flex;
         justify-content: center;
         width: 100%;
@@ -39,7 +40,7 @@
                     align-content: center;
                     span {
                         padding-left: 20px;
-                        position: relative;
+                        // position: relative;
                         top: 0;
                         left: 0;
                     }
@@ -56,6 +57,11 @@
                             align-content: center;
                             padding: 0.06em 4px 0.15em 4px !important;
                         }
+                        .genres {
+                            a {
+                                margin-right: 5px;
+                            }
+                        }
                     }
                     p {
                         margin: 0;
@@ -69,7 +75,7 @@
                             padding-top: 20px;
                             font-size: 1.8em;
                             .release-date {
-                                opacity: 0.8;
+                                color: rgb(202, 202, 202);
                                 font-weight: 400;
                                 padding-left: 10px;
                             }
@@ -113,6 +119,5 @@
                 width: 100%;
             }
         }
-        background-image: linear-gradient(to right, rgba(10.5, 31.5, 10.5, 1) 150px, rgba(10.5, 31.5, 10.5, 0.84) 100%);
     }
 }

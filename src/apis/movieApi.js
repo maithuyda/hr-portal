@@ -17,6 +17,18 @@ const movieApi = {
         const url = `/${media_type}/${id}`;
         return axiosClient.get(url, { params });
     },
+    getCredits: (params, media_type = 'tv', id) => {
+        const url = `/${media_type}/${id}/credits`;
+        return axiosClient.get(url, { params });
+    },
+    getReviews: (params, media_type = 'tv', id) => {
+        const url = `/${media_type}/${id}/reviews`;
+        return axiosClient.get(url, { params });
+    },
+    getRecommendations: (params, media_type = 'tv', id) => {
+        const url = `/${media_type}/${id}/recommendations`;
+        return axiosClient.get(url, { params });
+    },
 };
 
 export default movieApi;
