@@ -1,13 +1,11 @@
-import React, { useEffect } from 'react';
-import { Fragment } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useEffect, useState, Fragment } from 'react';
+import { useParams } from 'react-router-dom';
 
 import Header from '../../components/UI/Header';
 import Footer from '../../components/UI/Footer';
 import NavItemsList from '../../components/UI/NavItemsList';
 import MovieHeader from '../../components/MovieHeader';
-import { fetchById } from '../../redux/actions/movie';
-import { useParams } from 'react-router-dom';
+import movieApi from '../../apis/movieApi';
 
 import './index.scss';
 
@@ -118,13 +116,21 @@ const shortCutBarData = [
 ];
 
 const Movie = (props) => {
-    const dispatch = useDispatch();
+    const [detailData, setDetailData] = useState({});
+    const { media } = props;
     const movieId = useParams().movieId;
+
     useEffect(() => {
-        const params = {};
-        const movie = dispatch(fetchById(params, props.media, movieId));
-        console.log(movie);
-    }, []);
+        const fetchById = async () => {
+            const params = {};
+            const movie = await movieApi.getById(params, media, movieId);
+            const movieData = await movie.data;
+            return movieData;
+        };
+        fetchById().then((data) => {
+            setDetailData(data);
+        });
+    }, [movieId, media]);
     return (
         <Fragment>
             <div className="page-wrap">
@@ -135,9 +141,7 @@ const Movie = (props) => {
                             <NavItemsList data={shortCutBarData} />
                         </div>
                     </section>
-                    <section className="detail-header">
-                        <MovieHeader />
-                    </section>
+                    <section className="detail-header">{/* <MovieHeader data={detailData} /> */}</section>
                     <section className="detail-content">
                         <p>Movie Content</p>
                     </section>
