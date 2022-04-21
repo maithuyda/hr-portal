@@ -13,6 +13,10 @@ const movieApi = {
         const url = `/${media_type}/${id}/videos`;
         return axiosClient.get(url, { params });
     },
+    getById: (params, media_type = 'tv', id) => {
+        const url = `/${media_type}/${id}`;
+        return axiosClient.get(url, { params });
+    },
 };
 
 export default movieApi;

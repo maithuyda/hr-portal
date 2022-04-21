@@ -1,0 +1,35 @@
+section.shortcut-bar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.shortcut-bar_wrapper {
+    .nav-item {
+        padding-top: 0px;
+        padding-bottom: 5px;
+    }
+    .nav-dropdown {
+        overflow-x: hidden;
+        top: 40px;
+        left: 5;
+    }
+    justify-content: center;
+    display: flex;
+    ul {
+        li {
+            list-style-type: none;
+            width: 100%;
+            margin-right: 20px;
+        }
+        padding: 0;
+        display: flex;
+        margin: 0;
+    }
+}
+
+section.detail-header {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}

@@ -5,8 +5,8 @@ import Video from '../UI/Video';
 import './index.scss';
 
 const TrailersList = (props) => {
-    const videos = useSelector((state) => state.movie.latestTrailers);
-    let videosData = videos.payload;
+    const videos = useSelector((state) => state.movie.trailers);
+    let videosData = videos;
 
     if (!videosData) {
         videosData = [];
