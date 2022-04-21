@@ -1,0 +1,30 @@
+.detail-collection-content-wrapper {
+    border-radius: 8px;
+    .collection-overlay {
+        border-radius: 8px;
+        background-image: linear-gradient(to right, rgba(3, 37, 65, 1) 0%, rgba(3, 37, 65, 0.6) 100%);
+        .detail-collection-content {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 40px 20px;
+            .rounded-btn {
+                margin-bottom: 0;
+                border-radius: 20px;
+                display: inline-flex;
+                align-items: center;
+                align-content: center;
+                padding: 6px 20px;
+                border-color: rgba(31.5, 31.5, 94.5, 1);
+                background-color: rgba(31.5, 31.5, 94.5, 1);
+                text-transform: uppercase;
+                font-weight: 600;
+                width: fit-content;
+            }
+
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+    }
+}

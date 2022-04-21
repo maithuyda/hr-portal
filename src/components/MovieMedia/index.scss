@@ -1,0 +1,23 @@
+.menu {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    ul {
+        li {
+            margin-right: 12px;
+            padding: 5px 5px 2px 5px;
+        }
+        a {
+            font-weight: 600;
+            color: black;
+            span {
+                opacity: 0.6;
+                margin-left: 2px;
+            }
+        }
+        padding-left: 20px;
+        display: flex;
+        justify-content: flex-start;
+        list-style-type: none;
+    }
+}
