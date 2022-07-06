@@ -1,0 +1,136 @@
+@import './mixin.scss';
+
+.width-full {
+  width: 100%;
+}
+
+.width-half {
+  width: 50%;
+}
+
+.width-screen {
+  width: 100vw;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.w-0 {
+  width: 0;
+}
+
+.w-auto {
+  width: auto;
+}
+
+.w-6rem {
+  width: var(--space-6rem);
+}
+
+.w-screen {
+  width: 100vw;
+}
+
+/** HEIGHT **/
+
+.height-full {
+  height: 100%;
+}
+.h-screen {
+  height: 100vh;
+}
+
+.height-auto {
+  height: auto;
+}
+
+/* END HEIGHT */
+
+.overflow-auto {
+  overflow: auto;
+}
+.overflow-hidden {
+  overflow: hidden;
+}
+.overflow-visible {
+  overflow: visible;
+}
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+/** border radius **/
+.border--radius-small {
+  @include border-radius(var(--space-xxxx-small));
+}
+
+/** cursor **/
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.cursor-wait {
+  cursor: wait;
+}
+
+.cursor-not-allowed {
+  cursor: not-allowed;
+}
+
+/** Background **/
+.bg-white {
+  background-color: #fff;
+}
+
+.bg-primary {
+  background-color: var(--theme-color-primary);
+}
+
+.bg-schedule-status {
+  background-color: var(--theme-color-item-status);
+}
+
+.border-none {
+  border: none;
+}
+
+/** MARGIN **/
+.my-s-medium {
+  margin-right: var(--space-s-medium);
+}
+
+/** Text Align **/
+
+.display-none {
+  display: none;
+}
+
+.display-block {
+  display: block;
+}
+
+.display-flex {
+  display: flex;
+}
+
+/* POSITION */
+.fixed {
+  position: fixed;
+}
+.absolute {
+  position: absolute;
+}
+.relative {
+  position: relative;
+}
+
+/*ERROR*/
+.error {
+  color: var(--theme-color-bg-cancel);
+  word-wrap: break-word;
+}

@@ -1,0 +1,113 @@
+@import '../styles/mixin.scss';
+body {
+  font-size: var(--text-base);
+  background-color: var(--theme-color-body-bg);
+}
+
+.login--form {
+  min-height: 100vh;
+  @include flex(column);
+}
+
+.form--container {
+  background: var(--theme-color-white);
+  padding: var(--space-small);
+  border-radius: var(--space-small);
+}
+
+.layout--header {
+  background: var(--theme-color-primary);
+  padding: 0.4em;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--theme-color-scrollbar-bg);
+}
+
+::-webkit-scrollbar {
+  width: var(--space-xxx-small);
+  height: var(--space-xxx-small);
+  background-color: var(--theme-color-scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--theme-color-primary);
+}
+
+.flex {
+  @include flex();
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.flex--row {
+  flex-direction: row;
+}
+
+.ant-spin-dot i {
+  background-color: var(--theme-color-primary);
+}
+
+.radius-2px {
+  border-radius: var(--space-xxxxx-small) !important;
+}
+
+/** ANTD RESET **/
+.ant-select-dropdown-menu-item:hover,
+.ant-select-dropdown-menu-item-selected:hover,
+.ant-select-dropdown-menu-item-selected:hover,
+.ant-table-thead > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td,
+.ant-table-tbody > tr.ant-table-row-hover:not(.ant-table-expanded-row) > td,
+.ant-table-thead > tr:hover:not(.ant-table-expanded-row) > td,
+.ant-table-tbody > tr:hover:not(.ant-table-expanded-row) > td {
+  background-color: rgba(var(--color--primary), 0.1);
+}
+
+.ant-calendar-date:hover {
+  background-color: rgba(var(--color--primary), 0.5);
+}
+
+.ant-calendar-selected-date .ant-calendar-date,
+.ant-calendar-selected-start-date .ant-calendar-date,
+.ant-calendar-selected-end-date .ant-calendar-date,
+.ant-calendar-today .ant-calendar-date,
+.ant-calendar-selected-day .ant-calendar-date {
+  background: var(--theme-color-primary);
+  color: white;
+  border-color: var(--theme-color-primary);
+}
+
+.ant-calendar-picker:hover .ant-calendar-picker-input:not(.ant-input-disabled) {
+  border-color: var(--theme-color-primary);
+}
+
+.ant-calendar-header a:hover {
+  color: var(--theme-color-primary);
+}
+
+.ant-input-disabled {
+  color: var(--theme-color-question-answer-text);
+}
+
+.ant-select-dropdown-menu-item-active,
+.ant-select-dropdown-menu-item-selected {
+  background: white;
+}
+
+.ant-select-selection:hover,
+.ant-select-focused .ant-select-selection,
+.ant-select-selection:focus,
+.ant-select-selection:active,
+.ant-input:hover,
+.ant-input:focus {
+  border-color: var(--theme-color-primary);
+  box-shadow: none;
+}
+
+.ant-select-open .ant-select-selection {
+  border-color: var(--theme-color-primary);
+  outline: none;
+  box-shadow: none;
+}

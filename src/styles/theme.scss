@@ -1,0 +1,119 @@
+@use 'sass:meta';
+:root {
+  /** FONT VAR START **/
+  --text-xs: 0.75rem; /* 12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /* 16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /* 20px */
+  --text-2xl: 1.5rem; /* 24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /* 36px */
+  --text-5xl: 3rem; /* 48px */
+  --text-6xl: 4rem; /* 60px */
+  /** FONT VAR END **/
+  --theme-color-body-bg: rgba(244, 244, 244, 1);
+  --theme-color-secondary: #33333f;
+  --theme-color-primary-reset: #cccccc;
+  --theme-color-header-bg: #33333f;
+  --theme-color-header-before: #2c2c38;
+  --theme-color-success: #28a745;
+  --theme-color-warning: #e28413;
+  --theme-color-error: #ff6542;
+  --theme-color-link: #007bff;
+  --theme-color-disable: #777677;
+  --theme-color-white: #ffffff;
+  --theme-color-pale-white: #e9f5fa;
+  --theme-color-black: #000000;
+  --theme-color-shadow-message: #000000b2;
+  --theme-color-shadow: #0000000a;
+  --theme-color-light-gray: #777677;
+  --theme-color-modal-bottom: #eeeeee;
+  --theme-color-modal-bg: #00000080;
+  --theme-color-icon-title-bg: #e6e8ea;
+  --theme-color-notification-bg: #dddbde3b;
+  --theme-color-footer-bg: #393939;
+  --theme-color-text: #555555;
+  --theme-color-primary-bg: #f4f4f4;
+  --theme-color-question-answer-bg: #eeeeee;
+  --theme-color-question-answer-text: #555555;
+  --theme-color-video-bg: #d8d8d8;
+  --theme-color-row-table: #f1f1f1;
+  --theme-color-border: #d8d8d8;
+  --theme-color-scrollbar-bg: #b8b3b3;
+  --theme-color-pane-bg: #3a3a51;
+  --theme-color-border-row: #f0f0f0;
+  --theme-color-item-shadow: #6a6e7425;
+  --theme-color-item-content: #ba9a61;
+  --theme-color-item-content-shadow: #ba9a610a;
+  --theme-color-item-left-text: #666666;
+  --theme-color-item-right-text: #333333;
+  --theme-color-item-low_risk: #0fbd6b;
+  --theme-color-item-status: #6b7074;
+  --theme-color-item-disabled: #f5f5f5;
+  --theme-color-calendar: #f5f5f5;
+  --theme-color-border-input: #d9d9d9;
+  --theme-color-item-border-video: #d4d4d4;
+
+  --theme-color-item-bg: #c8c8c8;
+  --theme-color-item-doted: #979797;
+  --theme-color-bg-cancel: #e82828;
+  --theme-color-border-row: #f0f0f0;
+  --theme-color-text-node: #999999;
+  --theme-color-tab-bg: #ededee;
+  --theme-color-cancel-appointment: #e82828;
+  --theme-color-box-shadow: #ba9a61;
+  --theme-color-text-interview: #666666;
+  --theme-color-value-interview: #333333;
+  --theme-color-btn-interview: #33ccff;
+  --theme-color-cancel-interview: #a0a5ab;
+  --theme-color-calendar-header: #85949f;
+  --theme-color-low-risk: #2dbb54;
+  --theme-color-medium-risk: #fb9300;
+  --theme-color-high-risk: #e82828;
+
+  /** SPACE VAR START **/
+  --space-xxxxx-small: 0.125rem; /* 2px */
+  --space-xxxx-small: 0.25rem; /* 4px */
+  --space-xxx-small: 0.375rem; /* 6px */
+  --space-xx-small: 0.5rem; /* 8px */
+  --space-x-small: 0.75rem; /* 12px */
+  --space-small: 1rem; /* 16px */
+  --space-medium: 1.25rem; /* 20px */
+  --space-s-medium: 1.5rem; /* 24px */
+  --space-ss-medium: 1.75rem; /* 28px */
+  --space-large: 2rem; /* 32px */
+  --space-x-large: 2.25rem; /* 36px */
+  --space-xx-large: 2.5rem; /* 40px */
+  --space-xxx-large: 2.75rem; /* 44px */
+  --space-xxxx-large: 3rem; /* 48px */
+  --space-xxxxx-large: 3.5rem; /* 56px */
+  --space-4rem: 4rem; /* 64px */
+  --space-5rem: 5rem; /* 80px */
+  --space-6rem: 6rem; /* 96px */
+  --space-7rem: 7rem; /* 112px */
+  --space-7rem: 7.5rem; /* 120px */
+  --space-8rem: 8.125rem; /* 130px */
+  --space-9rem: 9rem; /* 144px */
+  --space-10rem: 10rem; /* 160px */
+  --space-12rem: 12rem; /* 190px */
+  --space-13rem: 13rem; /* 208px */
+  --space-14rem: 14rem; /* 224px */
+  --space-15rem: 15rem; /* 240px */
+  --space-x-15rem: 15.75rem; /* 252px */
+  --space-16rem: 16rem; /* 256px */
+  --space-17rem: 17rem; /* 272px */
+  --space-18rem: 18rem; /* 288px */
+  --space-20rem: 20rem; /* 320px */
+  --space-21rem: 21rem; /* 336px */
+  --space-22rem: 22rem; /* 360px */
+  --space-23rem: 23rem; /* 360px */
+  --space-25rem: 25rem; /* 400px */
+  --space-26rem: 26rem; /* 416px */
+  --space-28rem: 28rem; /* 448px */
+  --space-30rem: 30rem; /* 480px */
+  --space-35rem: 35rem; /* 560px */
+  --space-37rem: 37rem; /* 590px */
+  --space-40rem: 40rem; /* 640px */
+  /** SPACE VAR END **/
+}

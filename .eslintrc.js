@@ -39,6 +39,6 @@ module.exports = {
     'react/jsx-key': 'error',
     'default-case': 'error',
     'no-loop-func': 'error',
-    'id-length': ['warn', {min: 2}],
+    'id-length': ['error', {min: 2}],
   },
 };
