@@ -29,6 +29,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx src --color",
     "lint-staged": "lint-staged --config lint-staged.js",
+    "prettier": "prettier --write '**/*.{js,jsx,ts,tsx}'",
     "husky-install": "husky install"
   },
   "eslintConfig": {

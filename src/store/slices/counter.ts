@@ -1,4 +1,4 @@
-import {createSlice, PayloadAction} from '@reduxjs/toolkit';
+import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface ICounter {
   counter: number;
@@ -21,5 +21,5 @@ export const counterSlice = createSlice({
   },
 });
 
-export const {add, subtract} = counterSlice.actions;
+export const { add, subtract } = counterSlice.actions;
 export default counterSlice.reducer;
