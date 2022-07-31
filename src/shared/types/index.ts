@@ -18,3 +18,10 @@ export interface IGetTvPopularResponse {
     original_name: string;
   };
 }
+export interface IPortal {
+  username: string;
+}
+export interface IRegistrationProp {
+  isShowed: boolean;
+  setVisible: (a: boolean) => void;
+}

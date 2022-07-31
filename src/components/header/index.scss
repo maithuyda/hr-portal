@@ -1,0 +1,13 @@
+@import '../../styles/mixin.scss';
+
+.header{
+    @include flex(row, center, space-between);
+    @include background-color-primary;
+    height: 2rem;
+    &__left{
+
+    }
+    &__right{
+
+    }
+}

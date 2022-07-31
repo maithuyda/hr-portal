@@ -1,25 +1,22 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { IPortal } from 'shared/types';
 
-export interface ICounter {
-  counter: number;
-}
-
-export const initialState: ICounter = {
-  counter: 0,
+export const initialState: IPortal = {
+  username: 'd',
 };
 
-export const counterSlice = createSlice({
-  name: 'counter',
+export const portalSlice = createSlice({
+  name: 'portal',
   initialState,
   reducers: {
-    add: (state: ICounter, action: PayloadAction<number>) => {
-      state.counter = state.counter + action.payload;
+    signin: (state: IPortal, action: PayloadAction<string>) => {
+      state.username = action.payload;
     },
-    subtract: (state: ICounter, action: PayloadAction<number>) => {
-      state.counter = state.counter - action.payload;
+    signout: (state: IPortal) => {
+      state.username = '';
     },
   },
 });
 
-export const { add, subtract } = counterSlice.actions;
-export default counterSlice.reducer;
+export const { signin, signout } = portalSlice.actions;
+export default portalSlice.reducer;

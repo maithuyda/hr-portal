@@ -29,6 +29,7 @@ module.exports = {
         trailingComma: 'all',
         useTabs: false,
         bracketSpacing: true,
+        endOfLine: 'auto',
       },
     ],
     '@typescript-eslint/no-empty-function': ['warn'],
