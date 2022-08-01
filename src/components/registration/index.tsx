@@ -1,47 +1,78 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './index.scss';
-import { Modal, Button, Input } from 'antd';
+import { Modal, Button, Input, Form } from 'antd';
 import { IRegistrationProp } from 'shared/types';
 
 export default function Registration({ isShowed, setVisible }: IRegistrationProp) {
-  const [email, setEmail] = useState('');
-
-  const [username, setUserName] = useState('');
-
-  const [password, setPassword] = useState('');
-
-  const handleInputEmail = (event: React.FormEvent<HTMLInputElement>) => {
-    setEmail(event.currentTarget.value);
+  const onFinish = (values: any) => {
+    console.log('success', values);
   };
-  const handleInputUserName = (event: React.FormEvent<HTMLInputElement>) => {
-    setUserName(event.currentTarget.value);
-  };
-  const handleInputPassword = (event: React.FormEvent<HTMLInputElement>) => {
-    setPassword(event.currentTarget.value);
-  };
-  const handleSubmitForm = () => {
-    console.log('registration', email, username, password);
+
+  const onFinishFailed = (errorInfo: any) => {
+    console.log('Failed:', errorInfo);
   };
   return (
-    <Modal className="registration" visible={isShowed} title="Register" onCancel={() => setVisible(false)} footer="">
+    <Modal className="registration" visible={isShowed} title="Welcome !" onCancel={() => setVisible(false)} footer="">
       <div className="registration__container">
-        <h3>Welcome</h3>
-        <div className="input">
-          <label>
-            Email <Input onChange={handleInputEmail} placeholder="Input username" />
-          </label>
-          <label>
-            Username <Input onChange={handleInputUserName} placeholder="Input username" />
-          </label>
-          <label>
-            Password <Input.Password onChange={handleInputPassword} placeholder="Input password" />
-          </label>
-          <label>
-            Confirm Password <Input.Password onChange={handleInputPassword} placeholder="Input password" />
-          </label>
-          <Button onClick={handleSubmitForm} type="primary" block>
-            Login
+        <h2 className="title">Registration</h2>
+        <Form className="input" name="input" onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off">
+          <Form.Item name="email" rules={[{ required: true, message: 'Please input your email!' }]}>
+            <label>
+              Email
+              <Input size="large" className="input__margin-top-bottom" placeholder="Input email" />
+            </label>
+          </Form.Item>
+          <Form.Item name="username" rules={[{ required: true, message: 'Please input your username!' }]}>
+            <label>
+              Username
+              <Input size="large" className="input__margin-top-bottom" placeholder="Input username" />
+            </label>
+          </Form.Item>
+          <Form.Item
+            name="password"
+            rules={[
+              {
+                required: true,
+                message: 'Please input your password!',
+              },
+            ]}
+            hasFeedback>
+            <label>
+              Password
+              <Input.Password size="large" className="input__margin-top-bottom" placeholder="Input password" />
+            </label>
+          </Form.Item>
+          <Form.Item
+            name="confirm"
+            dependencies={['password']}
+            hasFeedback
+            rules={[
+              {
+                required: true,
+                message: 'Please confirm your password!',
+              },
+              ({ getFieldValue }) => ({
+                validator(__, value) {
+                  if (!value || getFieldValue('password') === value) {
+                    return Promise.resolve();
+                  }
+                  return Promise.reject(new Error('The two passwords that you entered do not match!'));
+                },
+              }),
+            ]}>
+            <label>
+              Confirmed Password
+              <Input.Password size="large" className="input__margin-top-bottom" placeholder="Input password" />
+            </label>
+          </Form.Item>
+          <Button size="large" className="register--btn" htmlType="submit" type="primary" block>
+            Sign In
           </Button>
+        </Form>
+        <div className="login">
+          <h3>
+            Don’t have an Account ? <span onClick={() => setVisible(false)}>Login</span>
+          </h3>
         </div>
       </div>
     </Modal>

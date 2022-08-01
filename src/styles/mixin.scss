@@ -80,3 +80,31 @@ $breakpoint-small-screen: 768px;
   text-decoration: underline;
   cursor: pointer;
 }
+
+@mixin margin-top-bottom($top: null, $bottom: null) {
+  @if $top {
+    margin-top: $top;
+  }
+  @if $bottom {
+    margin-bottom: $bottom;
+  }
+}
+@mixin border__box-shadow {
+  border: 1px solid var(--theme-color-border);
+  box-shadow: 0 0 3px var(--theme-color-item-shadow);
+}
+
+@mixin reset__ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@mixin hover-background-pointer {
+  cursor: pointer;
+  background-color: var(--theme-color-item-bg) ;
+}
+@mixin button-black-primary {
+  background-color: var(--theme-color-primary);
+  border-radius: 5px;
+  border-color:var(--theme-color-border)
+}

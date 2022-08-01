@@ -3,11 +3,46 @@
 .header{
     @include flex(row, center, space-between);
     @include background-color-primary;
-    height: 2rem;
+    height: 4rem;
+    padding: 0 2rem;
     &__left{
-
+        &--link {
+            height: 100%;
+            @include flex(row, center, center);
+            span {
+                color: var(--theme-color-white);
+                font-size: 2rem;
+            }
+            h3{
+                @include font(2rem, 400, var(--theme-color-white), 2rem);
+                margin:0;
+            }
+        }
     }
     &__right{
-
+        span {
+            @include font(2rem, 300, var(--theme-color-black), 2rem);
+            background-color: var(--theme-color-white);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    }
+}
+.ant-popover-inner{
+    .ant-popover-title{
+        @include font(1rem, 450, var(--theme-color-black), 1rem);
+        padding: 0.5rem;
+    }
+    .ant-popover-inner-content {
+        padding: 0;
+        .user-hover {
+            @include reset__ul;
+            &__item {
+                padding: 0.5rem;
+            }
+            &__item:hover {
+                @include hover-background-pointer;
+            }
+        }
     }
 }

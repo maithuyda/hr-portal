@@ -1,9 +1,8 @@
 @import '../../styles/mixin.scss';
-@import '../../styles/theme.scss';
 
-.appointment-list{
-    .create-appointment{
-        .button{
+.create-appointment{
+    &__container{
+        .btn-primary{
             @include button-black-primary;
         }
     }

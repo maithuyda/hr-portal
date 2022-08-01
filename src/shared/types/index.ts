@@ -25,3 +25,7 @@ export interface IRegistrationProp {
   isShowed: boolean;
   setVisible: (a: boolean) => void;
 }
+export interface ICreateAppointmentProp {
+  isShowed: boolean;
+  setVisible: (a: boolean) => void;
+}

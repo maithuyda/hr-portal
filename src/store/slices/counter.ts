@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { IPortal } from 'shared/types';
 
 export const initialState: IPortal = {
-  username: 'd',
+  username: '',
 };
 
 export const portalSlice = createSlice({

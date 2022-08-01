@@ -1,14 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './index.scss';
-import { Link } from 'react-router-dom';
+import { Button } from 'antd';
+import { PlusOutlined } from '@ant-design/icons';
+import CreateAppointment from '../../components/create-appointment-popup';
 
 export default function AppointmentList() {
+  const [appointmentPopup, setAppointmentPopup] = useState(false);
+  const showModal = () => {
+    setAppointmentPopup(true);
+  };
   return (
     <div className="appointment-list">
-      <h1>Appointment List Page</h1>
-      <Link to="/candidate-list">appointment list</Link>
-      <br />
-      <Link to="/candidate-details">appointment details</Link>
+      <div className="create-appointment">
+        <Button size="large" className="button" onClick={showModal} type="primary">
+          <PlusOutlined />
+          Create Appointment
+        </Button>
+        <CreateAppointment isShowed={appointmentPopup} setVisible={setAppointmentPopup} />
+      </div>
     </div>
   );
 }
