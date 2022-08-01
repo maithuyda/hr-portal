@@ -31,14 +31,14 @@ export default function SearchCandidate() {
   const options = [
     {
       label: renderTitle('Candidates'),
-      options: [renderItem('David', '12/12/2022'), renderItem('Philipp', '12/12/2022')],
+      options: [renderItem('David', 'ID1324561'), renderItem('Philipp', 'ID1324561')],
     },
   ];
   return (
     <AutoComplete
       dropdownClassName="certain-category-search-dropdown"
       dropdownMatchSelectWidth={500}
-      style={{ width: 250 }}
+      style={{ width: '50%' }}
       options={options}>
       <Input.Search size="large" placeholder="input here" />
     </AutoComplete>

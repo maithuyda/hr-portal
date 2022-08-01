@@ -2,8 +2,17 @@
 
 .create-appointment{
     &__container{
-        .btn-primary{
+        .btn-primary {
             @include button-black-primary;
         }
+        .input {
+            .form-item {
+                @include flex(row, center, space-between);
+                .width-50-flex {
+                    width: 50%;
+                }
+            }
+        }
     }
+    
 }

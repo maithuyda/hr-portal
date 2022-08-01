@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import { Modal, Button, Input, Form, Select, DatePicker } from 'antd';
+import { Modal, Button, Input, Form, DatePicker } from 'antd';
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { ICreateAppointmentProp } from 'shared/types';
 import SearchCandidate from '../search-candidate-autocomplete';
@@ -13,7 +13,8 @@ export default function CreateAppointment({ isShowed, setVisible }: ICreateAppoi
   const onFinishFailed = (errorInfo: any) => {
     console.log('Failed:', errorInfo);
   };
-  const { Option } = Select;
+
+  const { TextArea } = Input;
 
   return (
     <Modal
@@ -25,26 +26,41 @@ export default function CreateAppointment({ isShowed, setVisible }: ICreateAppoi
       <div className="create-appointment__container">
         <h2 className="title">Create Appointment</h2>
         <Form className="input" name="input" onFinish={onFinish} onFinishFailed={onFinishFailed} autoComplete="off">
-          <Form.Item>
-            <label>Candidate Name</label>
-            <SearchCandidate />
+          <Form.Item name="candidate_id">
+            <div className="form-item">
+              <label>Candidate ID</label>
+              <SearchCandidate />
+            </div>
           </Form.Item>
-          <Form.Item>
-            <label>Position</label>
-            <Select defaultValue="Sign Up" style={{ width: '30%' }}>
-              <Option value="Software Engineer">Software Engineer</Option>
-              <Option value="Bussiness Analysist">Bussiness Analysist</Option>
-              <Option value="Human Resourse">Human Resourse</Option>
-              <Option value="Maketing">Maketing</Option>
-            </Select>
+          <Form.Item name="date_of_interview">
+            <div className="form-item">
+              <label>Date of Interview</label>
+              <DatePicker className="width-50-flex" size="large" />
+            </div>
           </Form.Item>
-          <Form.Item>
-            <label>Date of Interview</label>
-            <DatePicker style={{ width: '50%' }} />
+          <Form.Item name="interviewers">
+            <div className="form-item">
+              <label>Interviewers</label>
+              <Input className="width-50-flex" size="large" placeholder="Input interviewers" />
+            </div>
           </Form.Item>
-          <Form.Item>
-            <label>Interviewers</label>
-            <Input size="large" className="input__margin-top-bottom" placeholder="Input username" />
+          <Form.Item name="agent_support">
+            <div className="form-item">
+              <label>Agent Support</label>
+              <Input className="width-50-flex" size="large" placeholder="Input agent support" />
+            </div>
+          </Form.Item>
+          <Form.Item name="topic">
+            <div className="form-item">
+              <label>Topic</label>
+              <TextArea autoSize className="width-50-flex" size="large" showCount maxLength={100} />
+            </div>
+          </Form.Item>
+          <Form.Item name="description">
+            <div className="form-item">
+              <label>Description</label>
+              <TextArea className="width-50-flex" size="large" autoSize showCount maxLength={300} />
+            </div>
           </Form.Item>
           <Button size="large" className="btn-primary" htmlType="submit" type="primary">
             <CheckOutlined />

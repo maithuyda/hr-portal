@@ -18,6 +18,9 @@ export default function AppointmentList() {
         </Button>
         <CreateAppointment isShowed={appointmentPopup} setVisible={setAppointmentPopup} />
       </div>
+      <div className="title-list">
+        <h2>Appointments</h2>
+      </div>
     </div>
   );
 }
