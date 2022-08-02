@@ -14,7 +14,7 @@ export default function SearchCandidate() {
     </span>
   );
   const renderItem = (title: string, count: string) => ({
-    value: title,
+    value: count,
     label: (
       <div
         style={{

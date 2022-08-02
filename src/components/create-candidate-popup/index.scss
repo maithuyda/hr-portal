@@ -1,6 +1,6 @@
 @import '../../styles/mixin.scss';
 
-.create-appointment{
+.create-candidate{
     &__container{
         .btn-primary {
             @include button-black-primary;
@@ -12,7 +12,7 @@
                     width: 50%;
                 }
             }
-            .create-appointment-btn {
+            .create-candidate-btn {
                 @include flex(row, center, end)
             }
         }

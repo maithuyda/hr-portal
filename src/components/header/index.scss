@@ -4,7 +4,7 @@
     @include flex(row, center, space-between);
     @include background-color-primary;
     height: 4rem;
-    padding: 0 2rem;
+    padding: 0.5rem 2rem;
     &__left{
         &--link {
             height: 100%;

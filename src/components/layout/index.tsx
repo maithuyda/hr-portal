@@ -8,8 +8,14 @@ export default function Layout() {
   return (
     <div className="layout">
       <Header />
-      <SideBar />
-      <Outlet />
+      <div className="content-wrapper">
+        <div className="content-wrapper-sidebar">
+          <SideBar />
+        </div>
+        <div className="content-wrapper-outlet">
+          <Outlet />
+        </div>
+      </div>
     </div>
   );
 }

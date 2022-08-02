@@ -1,0 +1,25 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/theme.scss';
+
+.candidate-list{
+    @include width-height--full-100;
+    .create-candidate {
+        .button{
+            @include button-black-primary;
+        }
+    }
+    .statistics-list {
+        padding: 1rem;
+    }
+    .title-list{
+        padding: 0.1rem 0;
+        h2{
+            @include font(2.2rem, 350, var(--theme-color-primary), 3rem)
+        }
+    }
+    .filter-list {
+        @include flex( row, center, space-between);
+        padding: 1rem 0;
+    }
+
+}

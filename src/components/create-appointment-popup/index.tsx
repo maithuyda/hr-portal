@@ -1,6 +1,6 @@
 import React from 'react';
 import './index.scss';
-import { Modal, Button, Input, Form, DatePicker } from 'antd';
+import { Modal, Button, Input, Form, DatePicker, TimePicker } from 'antd';
 import { CheckOutlined, CloseOutlined } from '@ant-design/icons';
 import { ICreateAppointmentProp } from 'shared/types';
 import SearchCandidate from '../search-candidate-autocomplete';
@@ -38,22 +38,40 @@ export default function CreateAppointment({ isShowed, setVisible }: ICreateAppoi
               <DatePicker className="width-50-flex" size="large" />
             </div>
           </Form.Item>
+          <Form.Item name="time_range">
+            <div className="form-item">
+              <label>Time Range</label>
+              <TimePicker.RangePicker use12Hours format="h:mm a" size="large" className="width-50-flex" />
+            </div>
+          </Form.Item>
           <Form.Item name="interviewers">
             <div className="form-item">
               <label>Interviewers</label>
-              <Input className="width-50-flex" size="large" placeholder="Input interviewers" />
+              <TextArea
+                autoSize
+                maxLength={50}
+                className="width-50-flex"
+                size="large"
+                placeholder="Input interviewers"
+              />
             </div>
           </Form.Item>
           <Form.Item name="agent_support">
             <div className="form-item">
               <label>Agent Support</label>
-              <Input className="width-50-flex" size="large" placeholder="Input agent support" />
+              <TextArea
+                autoSize
+                maxLength={50}
+                className="width-50-flex"
+                size="large"
+                placeholder="Input agent support"
+              />
             </div>
           </Form.Item>
           <Form.Item name="topic">
             <div className="form-item">
               <label>Topic</label>
-              <TextArea autoSize className="width-50-flex" size="large" showCount maxLength={100} />
+              <TextArea autoSize className="width-50-flex" size="large" showCount maxLength={50} />
             </div>
           </Form.Item>
           <Form.Item name="description">
@@ -62,14 +80,16 @@ export default function CreateAppointment({ isShowed, setVisible }: ICreateAppoi
               <TextArea className="width-50-flex" size="large" autoSize showCount maxLength={300} />
             </div>
           </Form.Item>
-          <Button size="large" className="btn-primary" htmlType="submit" type="primary">
-            <CheckOutlined />
-            Create Appointment
-          </Button>
-          <Button size="large" className="btn-primary" onClick={() => setVisible(false)} type="primary">
-            <CloseOutlined />
-            Cancel
-          </Button>
+          <div className="create-appointment-btn">
+            <Button size="large" className="btn-primary" htmlType="submit" type="primary">
+              <CheckOutlined />
+              Create Appointment
+            </Button>
+            <Button size="large" className="btn-primary" onClick={() => setVisible(false)} type="primary">
+              <CloseOutlined />
+              Cancel
+            </Button>
+          </div>
         </Form>
       </div>
     </Modal>

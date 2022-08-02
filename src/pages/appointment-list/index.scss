@@ -2,9 +2,24 @@
 @import '../../styles/theme.scss';
 
 .appointment-list{
-    .create-appointment{
+    @include width-height--full-100;
+    .create-appointment {
         .button{
             @include button-black-primary;
         }
     }
+    .statistics-list {
+        padding: 1rem;
+    }
+    .title-list{
+        padding: 0.1rem 0;
+        h2{
+            @include font(2.2rem, 350, var(--theme-color-primary), 3rem)
+        }
+    }
+    .filter-list {
+        @include flex( row, center, space-between);
+        padding: 1rem 0;
+    }
+
 }

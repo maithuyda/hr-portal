@@ -29,3 +29,7 @@ export interface ICreateAppointmentProp {
   isShowed: boolean;
   setVisible: (a: boolean) => void;
 }
+export interface ICreateCandidateProp {
+  isShowed: boolean;
+  setVisible: (a: boolean) => void;
+}

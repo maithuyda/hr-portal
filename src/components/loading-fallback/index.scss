@@ -1,0 +1,7 @@
+@import '../../styles/mixin.scss';
+
+.example {
+    background: var(--theme-color-body-bg);
+    @include flex(column, center, center);
+    @include width-height--full-vh;
+}
