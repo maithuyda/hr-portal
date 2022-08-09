@@ -1,4 +1,4 @@
-$breakpoint-small-screen: 1750px;
+$breakpoint-small-screen: 768px;
 
 @mixin border-radius($radius) {
   border-radius: $radius;
@@ -7,7 +7,9 @@ $breakpoint-small-screen: 1750px;
 @mixin border-button($color: var(--theme-color-primary)) {
   border: 1px solid $color;
 }
-
+@mixin background-color-primary{
+  background-color: var(--theme-color-primary);
+}
 @mixin background-color-button {
   background-color: var(--theme-color-primary);
 }
@@ -66,7 +68,43 @@ $breakpoint-small-screen: 1750px;
   }
 }
 
-@mixin width-height--full {
+@mixin width-height--full-100 {
   width: 100%;
   height: 100%;
+}
+@mixin width-height--full-vh{
+  width: 100%;
+  height: 100vh;
+}
+@mixin underline-pointer{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+@mixin margin-top-bottom($top: null, $bottom: null) {
+  @if $top {
+    margin-top: $top;
+  }
+  @if $bottom {
+    margin-bottom: $bottom;
+  }
+}
+@mixin border__box-shadow {
+  border: 1px solid var(--theme-color-border);
+  box-shadow: 0 0 3px var(--theme-color-item-shadow);
+}
+
+@mixin reset__ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+@mixin hover-background-pointer {
+  cursor: pointer;
+  background-color: var(--theme-color-item-bg) ;
+}
+@mixin button-black-primary {
+  background-color: var(--theme-color-primary);
+  border-radius: 5px;
+  border-color:var(--theme-color-border)
 }

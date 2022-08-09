@@ -1,0 +1,24 @@
+@import '../../styles/mixin.scss';
+
+.create-appointment{
+    &__container{
+        .btn-primary {
+            @include button-black-primary;
+        }
+        .input {
+            .width-100 {
+                width: 100%;
+            }
+        }
+        .create-appointment-btn {
+            @include flex(row, center, end)
+        }
+    }
+    
+}
+.ant-modal-root .ant-modal-mask {
+    background-color: transparent;
+}
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    content: '';
+}

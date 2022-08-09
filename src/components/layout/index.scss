@@ -1,0 +1,18 @@
+@import '../../styles/mixin.scss';
+
+.layout {
+    @include flex(column);
+    @include width-height--full-vh;
+    .content-wrapper {
+        height: 100%;
+        &-sidebar {
+            width: 20%;
+            min-width: 13rem;
+        }
+        display: flex;
+        .content-wrapper-outlet {
+            width: 100%;
+            padding: 1.5rem;
+        }
+    }
+}

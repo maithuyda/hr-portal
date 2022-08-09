@@ -1,0 +1,40 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/theme.scss';
+
+.candidate-list{
+    @include width-height--full-100;
+    .create-candidate {
+        padding: 1rem 0;
+        .button{
+            @include button-black-primary;
+            margin-right: 0.5rem;
+        }
+    }
+    .statistics-list {
+        padding: 1rem;
+    }
+    .title-list{
+        padding: 0.1rem 0;
+        h2{
+            @include font(2.2rem, 350, var(--theme-color-primary), 3rem)
+        }
+
+    }
+    .filter-list {
+        @include flex(row, center, end);
+        width: 100%;
+        padding: 1rem 0;
+        .search {
+            width: 40%;
+        }
+    }
+    .table-list {
+        .link {
+            color: var(--theme-color-primary);
+        }
+        .button {
+            @include button-black-primary;
+        }
+    }
+
+}

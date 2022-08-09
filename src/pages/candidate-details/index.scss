@@ -1,0 +1,36 @@
+@import '../../styles/mixin.scss';
+@import '../../styles/theme.scss';
+
+.candidate-details {
+    &__timeline {
+        .ant-timeline {
+            @include flex(row, center, center);
+            &-item {
+                width: 20%;
+                &-tail {
+                    width: calc(100% - 10px);
+                    border-top: 2px solid #f0f0f0;
+                    height: 0;
+                    border-left: none;
+                    top: 0.2rem;
+                    left: 0.65rem;
+                }
+                &-content {
+                    padding-top: 1rem;
+                }
+            }
+        }
+    }
+    &__content {
+        display: flex;
+        &--left {
+            width: 50%;
+            padding: 0 1rem;
+        }
+        &--right {
+            width: 50%;
+            padding: 0 1rem;
+
+        }
+    }
+}

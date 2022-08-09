@@ -1,0 +1,21 @@
+@import '../../styles/mixin.scss';
+
+.create-candidate{
+    &__container{
+        .btn-primary {
+            @include button-black-primary;
+        }
+        .input {
+            .width-100 {
+                width: 100%;
+            }
+            .create-candidate-btn {
+                @include flex(row, center, end)
+            }
+        }
+    }
+    
+}
+.ant-upload.ant-upload-select.ant-upload-select-picture {
+    width: 100%;
+}

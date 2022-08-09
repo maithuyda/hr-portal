@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
-import counterReducer from './slices/counter';
+import portalReducer from './slices/counter';
 
-const reducers = { counterReducer };
+const reducers = { portalReducer };
 
 export const rootReducer = combineReducers(reducers);

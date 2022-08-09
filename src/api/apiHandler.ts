@@ -1,13 +1,12 @@
 import axios, { AxiosInstance, AxiosRequestConfig } from 'axios';
 
-const API_KEY = '64e9c0b550ae1b08c54bf65bb08aba0b';
-const BASE_URL = 'https://api.themoviedb.org/3/';
+const API_KEY = '';
+const BASE_URL = 'vnditech.com:8080/';
 
 const config: AxiosRequestConfig = {
   baseURL: BASE_URL,
   params: {
     api_key: API_KEY,
-    language: 'en-US',
   },
   headers: {
     'content-type': 'application/json',

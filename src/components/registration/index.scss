@@ -1,0 +1,34 @@
+@import '../../styles/mixin.scss';
+
+.registration {
+    &__container {
+        padding: 1rem;
+        .title {
+            @include font(2rem, 450, var(--theme-color-primary), 2rem);
+            @include margin-top-bottom(2%, 8%);
+        }
+        .input {
+            label{
+                @include font(1.2rem, 450, var(--theme-color-primary), 1.2rem)
+            }
+            .input__margin-top-bottom {
+                @include margin-top-bottom(2%, 2%);
+            }
+            .register--btn {
+                background-color: var(--theme-color-primary);
+                @include margin-top-bottom(1%, 4%);
+            }  
+        }
+        .login{
+            h3{
+                @include font(1rem, 400, var(--theme-color-primary), 1rem);
+                span{
+                  font-weight: 550;
+                }
+                span:hover{
+                  @include underline-pointer;
+                }
+              }
+        }
+    }
+}

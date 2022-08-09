@@ -18,3 +18,23 @@ export interface IGetTvPopularResponse {
     original_name: string;
   };
 }
+export interface IPortal {
+  username: string;
+}
+export interface IRegistrationProp {
+  isShowed: boolean;
+  setVisible: (a: boolean) => void;
+}
+export interface ICreateAppointmentProp {
+  isShowed: boolean;
+  setVisible: (a: boolean) => void;
+  candidate_id: string;
+}
+export interface ICreateCandidateProp {
+  isShowed: boolean;
+  setVisible: (a: boolean) => void;
+}
+
+export interface ISearchCandidateAutocompleteProp {
+  candidate_id: string;
+}
