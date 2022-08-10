@@ -35,6 +35,20 @@
         .button {
             @include button-black-primary;
         }
+        .candidate__ellipsis {
+            a {
+                width: 100%;
+            }
+        }
+        .candidate__ellipsis:hover {
+
+        }
     }
 
+}
+.ant-dropdown-menu-item .-title-content {
+    width: 100%;
+    a {
+        display: block;
+    }
 }

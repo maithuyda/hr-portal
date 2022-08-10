@@ -5,7 +5,7 @@ import './index.scss';
 import signInImage from '../../assets/images/sign-in-img.svg';
 import Registration from '../../components/popup-registration';
 
-export default function SignIn() {
+export default function UserSettings() {
   const [registrationPopup, setRegistrationPopup] = useState(false);
 
   const navigate = useNavigate();

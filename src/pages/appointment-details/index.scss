@@ -23,13 +23,14 @@
     }
     &__content {
         display: flex;
-        &--appointment {
+        &--left {
             width: 50%;
+            padding: 0 1rem;
         }
-        &--profile {
+        &--right {
             width: 50%;
+            padding: 0 1rem;
 
         }
-
     }
 }

@@ -1,25 +1,21 @@
 import React, { useState, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
-import { Button, Input, Space, Table } from 'antd';
-import { PlusOutlined, VerticalAlignBottomOutlined, CloudDownloadOutlined } from '@ant-design/icons';
-const CreateCandidate = lazy(() => import('../../components/create-candidate-popup'));
-const CreateAppointment = lazy(() => import('../../components/create-appointment-popup'));
+import { Button, Input, Space, Table, Menu, Dropdown } from 'antd';
+import { PlusOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
+import MenuItem from 'antd/lib/menu/MenuItem';
+const CreateCandidate = lazy(() => import('../../components/popup-create-candidate'));
+
+const { Search } = Input;
+const { Column } = Table;
 
 export default function CandidateList() {
   const [candidatePopup, setCandidatePopup] = useState(false);
-  const [appointmentPopup, setAppointmentPopup] = useState(false);
-
   const showCandidatePopup = () => {
     setCandidatePopup(true);
   };
-  const showAppointmentPopup = () => {
-    setAppointmentPopup(true);
-  };
 
-  const { Search } = Input;
   const onSearch = (value: string) => console.log(value);
-  const { Column } = Table;
 
   interface DataType {
     key: React.Key;
@@ -69,40 +65,31 @@ export default function CandidateList() {
           <Column title="Position applied" dataIndex="position" />
           <Column title="Progress" dataIndex="progress" />
           <Column
-            title="CV"
-            key="action"
-            render={(__: any, record: DataType) => (
-              <Space size="middle">
-                <Link className="link" to={`/candidate-details/${record.id}`}>
-                  <CloudDownloadOutlined style={{ fontSize: '2rem' }} />
-                </Link>
-              </Space>
-            )}
-          />
-          <Column
             title=""
             key="action"
             render={(__: any, record: DataType) => (
               <Space size="middle">
-                <Link className="link" to={`/candidate-details/${record.id}`}>
-                  View Candidate
-                </Link>
-              </Space>
-            )}
-          />
-          <Column
-            title=""
-            key="action"
-            render={(__: any, record: DataType) => (
-              <Space size="middle">
-                <Button size="middle" className="button" onClick={showAppointmentPopup} type="primary">
-                  Create Appointment
-                </Button>
-                <CreateAppointment
-                  isShowed={appointmentPopup}
-                  setVisible={setAppointmentPopup}
-                  candidate_id={record.id}
-                />
+                {/* <Link className="link" to={`/candidate-details/${record.id}`}>
+                  Details
+                </Link> */}
+                <span className="candidate__ellipsis">
+                  <Dropdown.Button
+                    overlay={
+                      <Menu>
+                        <MenuItem>
+                          <Link to={`/candidate-details/${record.id}`}>View Details</Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link to={`/candidate-details/${record.id}`}>Download CV</Link>
+                        </MenuItem>
+                        <MenuItem>
+                          <Link to="/appointment-list">Create Appointment</Link>
+                        </MenuItem>
+                      </Menu>
+                    }
+                    size="large"
+                    trigger={['click']}></Dropdown.Button>
+                </span>
               </Space>
             )}
           />

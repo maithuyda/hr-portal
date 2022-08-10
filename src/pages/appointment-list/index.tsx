@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './index.scss';
 import { Button, Select, Input, Space, Table, Tag } from 'antd';
 import { PlusOutlined } from '@ant-design/icons';
-import CreateAppointment from '../../components/create-appointment-popup';
+import CreateAppointment from '../../components/popup-create-appointment';
 import { Link } from 'react-router-dom';
 
 export default function AppointmentList() {
@@ -77,7 +77,7 @@ export default function AppointmentList() {
             render={(tags: string[]) => (
               <>
                 {tags.map((tag) => (
-                  <Tag color="black" key={tag}>
+                  <Tag className="tag" key={tag}>
                     {tag}
                   </Tag>
                 ))}
@@ -85,12 +85,12 @@ export default function AppointmentList() {
             )}
           />
           <Column
-            title="Action"
+            title=""
             key="action"
             render={(__: any, record: DataType) => (
               <Space size="middle">
-                <Link className="link" to={`/candidate-details/${record.id}`}>
-                  View {record.name}
+                <Link className="link" to={`/appointment-details/${record.id}`}>
+                  Details
                 </Link>
               </Space>
             )}

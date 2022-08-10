@@ -21,7 +21,7 @@
     }
     &__right{
         span {
-            @include font(2rem, 300, var(--theme-color-black), 2rem);
+            @include font(2rem, 300, var(--theme-color-primary), 2rem);
             background-color: var(--theme-color-white);
             border-radius: 50%;
             cursor: pointer;

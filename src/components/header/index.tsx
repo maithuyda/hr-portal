@@ -15,7 +15,9 @@ export default function Header() {
 
   const userHover = (
     <ul className="user-hover">
-      <li className="user-hover__item">Profile</li>
+      <li className="user-hover__item">
+        <Link to="/user-profile">Profile</Link>
+      </li>
       <li className="user-hover__item" onClick={handleSingOutBtn}>
         Sign Out
       </li>

@@ -2,12 +2,12 @@
 
 .sidebar {
     @include width-height--full-100;
-    background-color: var(--theme-color-black);
+    background-color: var(--theme-color-primary);
     &__list {
         @include reset__ul;
         @include flex(column, left, center);
         &--item {
-            @include font(1.2rem, 450, var(--theme-color-white), 1.2rem);
+            @include font(1.2rem, 450, var(--theme-color-black), 1.2rem);
             a {
                 padding: 1rem;
                 @include width-height--full-100;
@@ -24,5 +24,20 @@
                 color: var(--theme-color-black);
             }
         }
+    }
+    .ant-menu-dark.ant-menu-dark:not(.ant-menu-horizontal) .ant-menu-item-selected {
+        background-color: var(--theme-color-white);
+        span {
+            color: var(--theme-color-primary);
+        }
+    }
+    .ant-menu.ant-menu-dark {
+        background-color: var(--theme-color-primary);
+    }
+    .ant-menu-item {
+        margin-top: 0;
+        color: var(--theme-color-white);
+        font-size: 1.3rem;
+        height: 3rem;
     }
 }
