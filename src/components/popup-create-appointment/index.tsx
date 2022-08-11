@@ -5,7 +5,7 @@ import { Modal, Button, Input, Form, DatePicker, TimePicker, AutoComplete } from
 import { CheckOutlined, CloseOutlined, UserOutlined } from '@ant-design/icons';
 import { ICreateAppointmentProp } from 'shared/types';
 
-export default function CreateAppointment({ isShowed, setVisible, candidate_id }: ICreateAppointmentProp) {
+export default function CreateAppointment({ isShowed, setVisible }: ICreateAppointmentProp) {
   const onFinish = (values: any) => {
     console.log('success', values);
   };
@@ -71,7 +71,6 @@ export default function CreateAppointment({ isShowed, setVisible, candidate_id }
               dropdownClassName="certain-category-search-dropdown"
               dropdownMatchSelectWidth={500}
               style={{ width: '100%' }}
-              defaultValue={candidate_id}
               options={options}>
               <Input.Search size="large" placeholder="input here" />
             </AutoComplete>

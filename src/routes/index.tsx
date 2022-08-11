@@ -10,6 +10,7 @@ const AppointmentDetails = lazy(() => import('pages/appointment-details'));
 const CandidateList = lazy(() => import('../pages/candidate-list'));
 const CandidateDetails = lazy(() => import('../pages/candidate-details'));
 const UserProfile = lazy(() => import('../pages/user-profile'));
+const ViewCV = lazy(() => import('../pages/view-cv'));
 
 const AppRoute = () => {
   return (
@@ -59,6 +60,14 @@ const AppRoute = () => {
               element={
                 <RequireAuth>
                   <UserProfile />
+                </RequireAuth>
+              }
+            />
+            <Route
+              path={RequireAuthRouteConfig.viewCV}
+              element={
+                <RequireAuth>
+                  <ViewCV />
                 </RequireAuth>
               }
             />

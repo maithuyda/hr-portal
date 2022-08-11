@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.scss';
-import { Button, Select, Input, Space, Table, Tag } from 'antd';
-import { PlusOutlined } from '@ant-design/icons';
+import { Button, Select, Input, Space, Table, Tag, Popover } from 'antd';
+import { PlusOutlined, EllipsisOutlined } from '@ant-design/icons';
 import CreateAppointment from '../../components/popup-create-appointment';
 import { Link } from 'react-router-dom';
 
@@ -89,9 +89,21 @@ export default function AppointmentList() {
             key="action"
             render={(__: any, record: DataType) => (
               <Space size="middle">
-                <Link className="link" to={`/appointment-details/${record.id}`}>
-                  Details
-                </Link>
+                <Popover
+                  content={
+                    <div className="candidate__ellipsis">
+                      <Link to={`/appointment-details/${record.id}`}>View Appointment</Link>
+                      <Link to={`/candidate-details/${record.id}`}>View Candidate</Link>
+                      <Link to="/appointment-list">Delete Appointment</Link>
+                    </div>
+                  }
+                  title=""
+                  trigger="click"
+                  placement="bottom">
+                  <Button>
+                    <EllipsisOutlined />
+                  </Button>
+                </Popover>
               </Space>
             )}
           />

@@ -3,6 +3,7 @@ import './index.scss';
 import { Modal, Button, Input, Form, DatePicker, Upload } from 'antd';
 import { CheckOutlined, CloseOutlined, UploadOutlined } from '@ant-design/icons';
 import { ICreateCandidateProp } from 'shared/types';
+const { TextArea } = Input;
 
 export default function CreateCandidate({ isShowed, setVisible }: ICreateCandidateProp) {
   const onFinish = (values: any) => {
@@ -13,8 +14,12 @@ export default function CreateCandidate({ isShowed, setVisible }: ICreateCandida
     console.log('Failed:', errorInfo);
   };
 
-  const { TextArea } = Input;
-
+  const normFile = (event: any) => {
+    if (Array.isArray(event)) {
+      return event;
+    }
+    return event?.fileList;
+  };
   return (
     <Modal
       className="create-candidate"
@@ -82,11 +87,17 @@ export default function CreateCandidate({ isShowed, setVisible }: ICreateCandida
               maxLength={50}
             />
           </Form.Item>
-          <Form.Item label="CV" name="CV" rules={[{ required: true, message: 'Please upload CV!' }]}>
-            <Upload listType="picture" className="upload-list-inline width-100">
-              <Button block icon={<UploadOutlined />}>
-                Upload
-              </Button>
+          <Form.Item
+            name="CV"
+            label="CV"
+            valuePropName="fileList"
+            getValueFromEvent={normFile}
+            rules={[{ required: true, message: 'Please upload CV!' }]}>
+            <Upload listType="picture-card">
+              <div>
+                <UploadOutlined />
+                <div style={{ marginTop: 8 }}>Upload</div>
+              </div>
             </Upload>
           </Form.Item>
           <div className="create-candidate-btn">

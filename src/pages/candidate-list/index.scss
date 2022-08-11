@@ -35,14 +35,6 @@
         .button {
             @include button-black-primary;
         }
-        .candidate__ellipsis {
-            a {
-                width: 100%;
-            }
-        }
-        .candidate__ellipsis:hover {
-
-        }
     }
 
 }
@@ -50,5 +42,12 @@
     width: 100%;
     a {
         display: block;
+    }
+}
+.candidate__ellipsis {
+    @include flex(column, left, center);
+    padding: 0.5rem;
+    a {
+        padding: 0.2rem 0;
     }
 }

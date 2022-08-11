@@ -9,4 +9,5 @@ export const RequireAuthRouteConfig = {
   candidateList: 'candidate-list',
   candidateDetails: 'candidate-details/:candidate_id',
   userProfile: 'user-profile/:user_id',
+  viewCV: 'view-cv/:candidate_id',
 };

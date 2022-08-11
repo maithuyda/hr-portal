@@ -25,6 +25,10 @@
         display: flex;
         &--appointment {
             width: 50%;
+            &__scrollable {
+                overflow-y: scroll;
+                height: 50vh;
+            }
         }
         &--profile {
             width: 50%;

@@ -1,9 +1,8 @@
 import React, { useState, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import './index.scss';
-import { Button, Input, Space, Table, Menu, Dropdown } from 'antd';
-import { PlusOutlined, VerticalAlignBottomOutlined } from '@ant-design/icons';
-import MenuItem from 'antd/lib/menu/MenuItem';
+import { Button, Input, Space, Table, Popover } from 'antd';
+import { PlusOutlined, VerticalAlignBottomOutlined, EllipsisOutlined } from '@ant-design/icons';
 const CreateCandidate = lazy(() => import('../../components/popup-create-candidate'));
 
 const { Search } = Input;
@@ -69,27 +68,21 @@ export default function CandidateList() {
             key="action"
             render={(__: any, record: DataType) => (
               <Space size="middle">
-                {/* <Link className="link" to={`/candidate-details/${record.id}`}>
-                  Details
-                </Link> */}
-                <span className="candidate__ellipsis">
-                  <Dropdown.Button
-                    overlay={
-                      <Menu>
-                        <MenuItem>
-                          <Link to={`/candidate-details/${record.id}`}>View Details</Link>
-                        </MenuItem>
-                        <MenuItem>
-                          <Link to={`/candidate-details/${record.id}`}>Download CV</Link>
-                        </MenuItem>
-                        <MenuItem>
-                          <Link to="/appointment-list">Create Appointment</Link>
-                        </MenuItem>
-                      </Menu>
-                    }
-                    size="large"
-                    trigger={['click']}></Dropdown.Button>
-                </span>
+                <Popover
+                  content={
+                    <div className="candidate__ellipsis">
+                      <Link to={`/candidate-details/${record.id}`}>View Details</Link>
+                      <Link to={`/candidate-details/${record.id}`}>Download CV</Link>
+                      <Link to="/appointment-list">Create Appointment</Link>
+                    </div>
+                  }
+                  title=""
+                  trigger="click"
+                  placement="bottom">
+                  <Button>
+                    <EllipsisOutlined />
+                  </Button>
+                </Popover>
               </Space>
             )}
           />
