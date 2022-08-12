@@ -27,7 +27,7 @@
           @include margin-top-bottom(2%, 2%);
         }
         .sign-in-btn {
-          @include button-black-primary;
+          @include button-color-primary;
           @include margin-top-bottom(3%, 7%);
         }  
       }

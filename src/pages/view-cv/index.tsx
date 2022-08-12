@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Document, Page } from 'react-pdf/dist/esm/entry.webpack';
-
+import { Button } from 'antd';
 import samplePDF from './sample-cv.pdf';
-
+import './index.scss';
 export default function ViewCV() {
   const [numPages, setNumPages] = useState(0);
   const [pageNumber, setPageNumber] = useState(1);
@@ -25,20 +25,20 @@ export default function ViewCV() {
   };
 
   return (
-    <div>
-      <Document file={samplePDF} onLoadSuccess={onDocumentLoadSuccess}>
+    <div className="view-cv">
+      <Document className="view-cv-document" file={samplePDF} onLoadSuccess={onDocumentLoadSuccess}>
         <Page pageNumber={pageNumber} />
       </Document>
-      <div>
+      <div className="view-cv-navigation">
         <p>
           Page {pageNumber || (numPages ? 1 : '--')} of {numPages || '--'}
         </p>
-        <button type="button" disabled={pageNumber <= 1} onClick={previousPage}>
+        <Button disabled={pageNumber <= 1} onClick={previousPage}>
           Previous
-        </button>
-        <button type="button" disabled={pageNumber >= numPages} onClick={nextPage}>
+        </Button>
+        <Button disabled={pageNumber >= numPages} onClick={nextPage}>
           Next
-        </button>
+        </Button>
       </div>
     </div>
   );

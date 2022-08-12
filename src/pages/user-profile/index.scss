@@ -1,64 +1,33 @@
 @import '../../styles/mixin.scss';
 @import '../../styles/theme.scss';
 
-.sign-in{
-  @include flex(row, center, center);
-  @include width-height--full-vh;
-  &__left{
-    flex: 50%;
-    padding: 10%;
-    &--container{
-      @include border__box-shadow;
-      padding: 10%;
-      .title{
-        @include margin-top-bottom(3%, 7%);
-        h3{
-          @include font(1.5rem, 300, var(--theme-color-primary), 1.5rem)
+.edit-details-appointment {
+    .edit-btn {
+        button {
+            @include button-color-primary;
         }
-        h2{
-          @include font(2rem, 450, var(--theme-color-primary), 2rem)
-        }
-      }
-      .input {
-        label{
-          @include font(1rem, 450, var(--theme-color-primary), 1.2rem)
-        }
-        .input__margin-top-bottom {
-          @include margin-top-bottom(2%, 2%);
-        }
-        .sign-in-btn {
-          @include button-black-primary;
-          @include margin-top-bottom(3%, 7%);
-        }  
-      }
-      .register{
-        h3{
-          text-align: center;
-          @include font(1rem, 400, var(--theme-color-primary), 1rem);
-          span{
-            font-weight: 550;
-          }
-          span:hover{
-            @include underline-pointer;
-          }
-        }
-      }
     }
-  }
-  &__right{
-    flex: 50%;
-    img{
-      @include width-height--full-100;
+    .input {
+        width: 70%;
+        .btn-primary {
+            @include button-color-primary;
+        }
     }
-  }
 }
-@media screen and (max-width: 600px) {
-  .sign-in{
-    &__left{
-      flex: 100%;
-    }
-    &__right{
-      display: none;
-    }
-  }
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    content: '';
+}
+.ant-input[disabled] {
+    color: var(--theme-color-black);
+    background-color: transparent;
+    border: none;
+}
+.ant-picker-input > input[disabled] {
+    color: var(--theme-color-black);
+    background-color: transparent;
+    border: none;
+}
+.ant-picker.ant-picker-disabled {
+    background-color: transparent;
+    border: none;
 }

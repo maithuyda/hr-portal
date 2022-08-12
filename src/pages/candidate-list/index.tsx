@@ -71,7 +71,7 @@ export default function CandidateList() {
                 <Popover
                   content={
                     <div className="candidate__ellipsis">
-                      <Link to={`/candidate-details/${record.id}`}>View Details</Link>
+                      <Link to={`/candidate-details/${record.id}`}>View Candidate</Link>
                       <Link to={`/candidate-details/${record.id}`}>Download CV</Link>
                       <Link to="/appointment-list">Create Appointment</Link>
                     </div>

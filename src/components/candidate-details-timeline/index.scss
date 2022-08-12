@@ -1,14 +1,8 @@
 @import '../../styles/mixin.scss';
 
 .candidate-details-timeline {
-    position: relative;
-    padding: 1rem 0;
-    .ant-timeline-item {
-        font-size: 1.3rem;
+    .steps-action {
+        text-align: right;
     }
-    &-button {
-        position: absolute;
-        top: 0;
-        right : 2rem;
-    }
+
 }

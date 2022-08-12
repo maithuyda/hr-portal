@@ -1,14 +1,34 @@
 @import '../../styles/mixin.scss';
 
-.candidate-details-timeline {
-    position: relative;
-    padding: 1rem 0;
-    .ant-timeline-item {
-        font-size: 1.3rem;
+.candidate-details__content--profile {
+    .edit-btn {
+        button {
+            @include button-color-primary;
+        }
     }
-    &-button {
-        position: absolute;
-        top: 0;
-        right : 2rem;
+    .input {
+        .btn-primary {
+            @include button-color-primary;
+        }
     }
+    .ant-upload {
+        width: 100%;
+    }
+}
+.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    content: '';
+}
+.ant-input[disabled] {
+    color: var(--theme-color-black);
+    background-color: transparent;
+    border: none;
+}
+.ant-picker-input > input[disabled] {
+    color: var(--theme-color-black);
+    background-color: transparent;
+    border: none;
+}
+.ant-picker.ant-picker-disabled {
+    background-color: transparent;
+    border: none;
 }

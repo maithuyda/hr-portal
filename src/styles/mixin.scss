@@ -103,7 +103,7 @@ $breakpoint-small-screen: 768px;
   cursor: pointer;
   background-color: var(--theme-color-item-bg) ;
 }
-@mixin button-black-primary {
+@mixin button-color-primary {
   background-color: var(--theme-color-primary);
   border-radius: 5px;
   border-color:var(--theme-color-border)

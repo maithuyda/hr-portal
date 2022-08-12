@@ -3,7 +3,7 @@
 .create-candidate{
     &__container{
         .btn-primary {
-            @include button-black-primary;
+            @include button-color-primary;
         }
         .input {
             .width-100 {

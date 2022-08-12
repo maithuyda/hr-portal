@@ -6,7 +6,7 @@
     .create-appointment {
         padding: 1rem 0;
         .button{
-            @include button-black-primary;
+            @include button-color-primary;
         }
     }
     .statistics-list {

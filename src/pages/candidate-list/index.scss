@@ -6,7 +6,7 @@
     .create-candidate {
         padding: 1rem 0;
         .button{
-            @include button-black-primary;
+            @include button-color-primary;
             margin-right: 0.5rem;
         }
     }
@@ -33,7 +33,7 @@
             color: var(--theme-color-primary);
         }
         .button {
-            @include button-black-primary;
+            @include button-color-primary;
         }
     }
 

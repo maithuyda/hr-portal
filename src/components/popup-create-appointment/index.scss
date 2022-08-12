@@ -3,7 +3,7 @@
 .create-appointment{
     &__container{
         .btn-primary {
-            @include button-black-primary;
+            @include button-color-primary;
         }
         .input {
             .width-100 {
@@ -15,10 +15,4 @@
         }
     }
     
-}
-.ant-modal-root .ant-modal-mask {
-    background-color: transparent;
-}
-.ant-form-item-label > label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
-    content: '';
 }
