@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Input, Button, Form } from 'antd';
 import './index.scss';
-import signInImage from '../../assets/images/sign-in-img.svg';
+import signInImage from '../../assets/pdf/sample-cv.pdf';
 import Registration from '../../components/popup-registration';
 
 export default function SignIn() {

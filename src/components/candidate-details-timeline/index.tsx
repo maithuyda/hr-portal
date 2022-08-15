@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './index.scss';
 import { AuditOutlined, SmileOutlined, SolutionOutlined, UserOutlined } from '@ant-design/icons';
-import { Steps, Button, message } from 'antd';
+import { Steps, Button } from 'antd';
 
 const { Step } = Steps;
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import { Button, Input, Space, Table, Popover } from 'antd';
 import { PlusOutlined, VerticalAlignBottomOutlined, EllipsisOutlined } from '@ant-design/icons';
+import DownloadCV from '../../components/download-cv';
 const CreateCandidate = lazy(() => import('../../components/popup-create-candidate'));
 
 const { Search } = Input;
@@ -23,6 +24,7 @@ export default function CandidateList() {
     created_date: string;
     position: string;
     progress: string;
+    cv_id: string;
   }
 
   const data: DataType[] = [];
@@ -34,6 +36,7 @@ export default function CandidateList() {
       created_date: `${index}/20/2000`,
       position: `Software Engineer ${index}`,
       progress: `Pending Interview${index}`,
+      cv_id: 'csv-sample.csv',
     });
   }
   return (
@@ -65,14 +68,13 @@ export default function CandidateList() {
           <Column title="Progress" dataIndex="progress" />
           <Column
             title=""
-            key="action"
+            key="view-more"
             render={(__: any, record: DataType) => (
               <Space size="middle">
                 <Popover
                   content={
                     <div className="candidate__ellipsis">
                       <Link to={`/candidate-details/${record.id}`}>View Candidate</Link>
-                      <Link to={`/candidate-details/${record.id}`}>Download CV</Link>
                       <Link to="/appointment-list">Create Appointment</Link>
                     </div>
                   }
@@ -84,6 +86,15 @@ export default function CandidateList() {
                   </Button>
                 </Popover>
               </Space>
+            )}
+          />
+          <Column
+            title=""
+            key="downloadCV"
+            render={(__: any, record: DataType) => (
+              <div>
+                <DownloadCV />
+              </div>
             )}
           />
         </Table>
