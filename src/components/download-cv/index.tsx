@@ -1,24 +1,33 @@
-import React, { useState, useRef } from 'react';
-// import { Link } from 'react-router-dom';
-import { Button, message } from 'antd';
+import { downloadFile } from '../../actions/download-file';
+import React, { useState } from 'react';
+// import { useDownloadFile } from '../../customHooks/useDownloadFile';
 import { DownloadOutlined } from '@ant-design/icons';
-import axios from 'axios';
+import { Button } from 'antd';
 
-export default function DownloadCV() {
-  const [buttonState, setButtonState] = useState(false);
-  const preDownloading = () => setButtonState(true);
-  const postDownloading = () => setButtonState(false);
+export interface IDownloadCVProp {
+  cv_id: string;
+}
+export default function DownloadCV({ cv_id }: IDownloadCVProp) {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const handleDownloadCV = async () => {
+    setIsLoading(true);
+    downloadFile({
+      link: `https://raw.githubusercontent.com/anubhav-goel/react-download-file-axios/main/sampleFiles/${cv_id}`,
+      fileName: 'Lephuong.csv',
+    });
+    setIsLoading(false);
+  };
 
   return (
     <div className="download-cv">
-      <a href={url} download={name} ref={ref} />
       <Button
-        onClick={() => downloadCVFile('fdsafds')}
+        onClick={handleDownloadCV}
         type="primary"
         shape="circle"
         icon={<DownloadOutlined />}
         size="large"
-        loading={buttonState}
+        loading={isLoading}
       />
     </div>
   );

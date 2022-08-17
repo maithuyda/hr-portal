@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 import './index.scss';
 import { Button, Input, Space, Table, Popover } from 'antd';
 import { PlusOutlined, VerticalAlignBottomOutlined, EllipsisOutlined } from '@ant-design/icons';
-import DownloadCV from '../../components/download-cv';
 const CreateCandidate = lazy(() => import('../../components/popup-create-candidate'));
+const DownloadCV = lazy(() => import('../../components/download-cv'));
 
 const { Search } = Input;
 const { Column } = Table;
@@ -92,8 +92,8 @@ export default function CandidateList() {
             title=""
             key="downloadCV"
             render={(__: any, record: DataType) => (
-              <div>
-                <DownloadCV />
+              <div key={record.id}>
+                <DownloadCV cv_id={record.cv_id} />
               </div>
             )}
           />
